@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Copilot Token Optimization — Ship More, Spend Less</title>
+  <meta name="description" content="Interactive guide to maximizing token efficiency across every GitHub Copilot surface — VS Code, CLI, Cloud Agent, and more." />
+  <meta name="author" content="GitHub" />
+  <meta name="theme-color" content="#0d1117" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+</head>
+<body>
+
+  <!-- Noise overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-bar">
+      <div class="hero-brand">
+        <svg class="hero-brand-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+        </svg>
+        <span class="hero-brand-name">Copilot Token Optimization</span>
+      </div>
+      <div class="hero-controls">
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+          <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Ship More, <span class="hero-title-accent">Spend Less</span></h1>
+      <p class="hero-subtitle">A developer's guide to maximizing token efficiency across every GitHub Copilot surface</p>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="poster">
+
+    <!-- Section 1: Best Practices -->
+    <section class="layer-band" style="--layer-color: #3fb950;" onclick="toggleLayer(this)" tabindex="0" role="button" aria-expanded="false">
+      <div class="layer-band-header">
+        <div class="layer-num">1</div>
+        <div class="layer-band-titles">
+          <span class="layer-label">Foundation</span>
+          <h2 class="layer-band-title" data-layer-num="1">Best Practices</h2>
+          <p class="layer-band-subtitle">General strategies to reduce token consumption while maintaining output quality</p>
+        </div>
+        <button class="layer-expand-btn" aria-label="Expand section">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><line x1="21" y1="3" x2="14" y2="10"/><polyline points="9 21 3 21 3 15"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+        </button>
+      </div>
+      <div class="layer-components layer-components-3">
+
+        <div class="component-section">
+          <h3 class="component-section-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            Be Specific in Prompts
+          </h3>
+          <p class="component-section-desc">Vague prompts lead to multiple back-and-forth cycles. Each revision costs tokens. Front-load context by specifying language, framework, constraints, and expected output format upfront.</p>
+          <div class="component-tags">
+            <span class="component-tag">Prompt Engineering</span>
+            <span class="component-tag">All Surfaces</span>
+          </div>
+        </div>
+
+        <div class="component-section">
+          <h3 class="component-section-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+            Use Custom Instructions
+          </h3>
+          <p class="component-section-desc">Set persistent context via <code>.github/copilot-instructions.md</code> so Copilot understands your project conventions without you repeating them. This eliminates redundant context in every prompt.</p>
+          <div class="component-tags">
+            <span class="component-tag">Configuration</span>
+            <span class="component-tag">Context Reduction</span>
+          </div>
+        </div>
+
+        <div class="component-section">
+          <h3 class="component-section-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            Scope Your Context
+          </h3>
+          <p class="component-section-desc">Only include relevant files and code snippets. More context ≠ better results — it means more input tokens. Close unrelated tabs, use <code>#file</code> references to pinpoint exactly what Copilot should look at.</p>
+          <div class="component-tags">
+            <span class="component-tag">Context Window</span>
+            <span class="component-tag">Efficiency</span>
+          </div>
+        </div>
+
+        <div class="component-section">
+          <h3 class="component-section-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+            Break Down Large Tasks
+          </h3>
+          <p class="component-section-desc">Instead of asking for an entire feature in one prompt, decompose it into smaller, focused steps. Smaller requests produce better results with fewer retry tokens and reduce wasted output on wrong approaches.</p>
+          <div class="component-tags">
+            <span class="component-tag">Task Decomposition</span>
+            <span class="component-tag">Quality</span>
+          </div>
+        </div>
+
+        <div class="component-section">
+          <h3 class="component-section-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            Accept & Edit, Don't Regenerate
+          </h3>
+          <p class="component-section-desc">If a suggestion is 80% right, accept it and manually edit the remainder rather than regenerating from scratch. Each regeneration consumes a full round of tokens for potentially marginal improvements.</p>
+          <div class="component-tags">
+            <span class="component-tag">Workflow</span>
+            <span class="component-tag">Token Savings</span>
+          </div>
+        </div>
+
+        <div class="component-section">
+          <h3 class="component-section-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Start New Conversations
+          </h3>
+          <p class="component-section-desc">Long chat threads accumulate context that gets re-sent with every message. When switching topics, start a fresh conversation. This prevents bloated context windows and keeps token usage lean.</p>
+          <div class="component-tags">
+            <span class="component-tag">Chat Management</span>
+            <span class="component-tag">Context Reset</span>
+          </div>
+        </div>
+
+      </div>
+      <button class="layer-focus-close" onclick="event.stopPropagation(); closeLayer(this.closest('.layer-band'))" aria-label="Close expanded view">✕</button>
+    </section>
+
+    <!-- Connector -->
+    <div class="connector">
+      <div class="connector-line"></div>
+      <div class="connector-dot"></div>
+    </div>
+
+    <!-- Section 2: Tools -->
+    <section class="layer-band" style="--layer-color: #58a6ff;" onclick="toggleLayer(this)" tabindex="0" role="button" aria-expanded="false">
+      <div class="layer-band-header">
+        <div class="layer-num">2</div>
+        <div class="layer-band-titles">
+          <span class="layer-label">Surface-Specific</span>
+          <h2 class="layer-band-title" data-layer-num="2">Tools</h2>
+          <p class="layer-band-subtitle">Token-efficient features and tools across each Copilot surface</p>
+        </div>
+        <button class="layer-expand-btn" aria-label="Expand section">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><line x1="21" y1="3" x2="14" y2="10"/><polyline points="9 21 3 21 3 15"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+        </button>
+      </div>
+      <div class="layer-components layer-components-3">
+
+        <div class="component-section">
+          <h3 class="component-section-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            VS Code — Inline Completions
+          </h3>
+          <p class="component-section-desc">Tab completions use far fewer tokens than chat. For small code snippets, let Copilot's inline suggestions do the work. Use <code>Next Edit Suggestions</code> and <code>Copilot Edits</code> for multi-file changes instead of chat-based iteration.</p>
+          <div class="component-tags">
+            <span class="component-tag">VS Code</span>
+            <span class="component-tag">Completions</span>
+          </div>
+        </div>
+
+        <div class="component-section">
+          <h3 class="component-section-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            VS Code — Vision & References
+          </h3>
+          <p class="component-section-desc">Drag images into chat for UI work instead of describing layouts in text. Use <code>#file</code>, <code>#selection</code>, and <code>#codebase</code> references to provide precise context without pasting code blocks into the prompt.</p>
+          <div class="component-tags">
+            <span class="component-tag">VS Code</span>
+            <span class="component-tag">Context Tools</span>
+          </div>
+        </div>
+
+        <div class="component-section">
+          <h3 class="component-section-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            VS Code — Agent Mode
+          </h3>
+          <p class="component-section-desc">Agent mode can autonomously run terminal commands, fix errors, and iterate — but each loop costs tokens. Set <code>Auto</code> approval thoughtfully. Use <code>@workspace</code> for codebase-wide questions so Copilot indexes efficiently rather than scanning everything.</p>
+          <div class="component-tags">
+            <span class="component-tag">VS Code</span>
+            <span class="component-tag">Agentic</span>
+          </div>
+        </div>
+
+        <div class="component-section">
+          <h3 class="component-section-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+            Copilot CLI
+          </h3>
+          <p class="component-section-desc">Use sub-agents (<code>explore</code>, <code>task</code>) for parallel work — they use smaller models and less tokens. Leverage <code>grep</code>/<code>glob</code>/<code>view</code> tools directly for simple lookups instead of launching agents. Use <code>/compact</code> to summarize and reduce conversation context.</p>
+          <div class="component-tags">
+            <span class="component-tag">Terminal</span>
+            <span class="component-tag">Sub-agents</span>
+          </div>
+        </div>
+
+        <div class="component-section">
+          <h3 class="component-section-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            Copilot Cloud Agent
+          </h3>
+          <p class="component-section-desc">Write detailed issue descriptions with clear acceptance criteria. The agent works autonomously on a VM — vague issues cause more exploration loops and token burn. Use <code>copilot-setup-steps.yml</code> to pre-install dependencies so the agent doesn't spend tokens figuring out the environment.</p>
+          <div class="component-tags">
+            <span class="component-tag">Cloud</span>
+            <span class="component-tag">Autonomous</span>
+          </div>
+        </div>
+
+        <div class="component-section">
+          <h3 class="component-section-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            Model Selection
+          </h3>
+          <p class="component-section-desc">Choose the right model for the job. Use fast/cheap models (GPT-4.1, Claude Haiku) for simple tasks like code completion and quick questions. Reserve premium models (Claude Opus, o3-pro) for complex reasoning where quality matters most.</p>
+          <div class="component-tags">
+            <span class="component-tag">All Surfaces</span>
+            <span class="component-tag">Cost Control</span>
+          </div>
+        </div>
+
+      </div>
+      <button class="layer-focus-close" onclick="event.stopPropagation(); closeLayer(this.closest('.layer-band'))" aria-label="Close expanded view">✕</button>
+    </section>
+
+    <!-- Connector -->
+    <div class="connector">
+      <div class="connector-line"></div>
+      <div class="connector-dot"></div>
+    </div>
+
+    <!-- Section 3: Monitor Your Usage -->
+    <section class="layer-band" style="--layer-color: #bc8cff;" onclick="toggleLayer(this)" tabindex="0" role="button" aria-expanded="false">
+      <div class="layer-band-header">
+        <div class="layer-num">3</div>
+        <div class="layer-band-titles">
+          <span class="layer-label">Observability</span>
+          <h2 class="layer-band-title" data-layer-num="3">Monitor Your Usage</h2>
+          <p class="layer-band-subtitle">Track and understand your Copilot consumption to stay in control</p>
+        </div>
+        <button class="layer-expand-btn" aria-label="Expand section">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><line x1="21" y1="3" x2="14" y2="10"/><polyline points="9 21 3 21 3 15"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+        </button>
+      </div>
+      <div class="layer-components layer-components-3">
+
+        <div class="component-section">
+          <h3 class="component-section-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+            Premium Request Tracking
+          </h3>
+          <p class="component-section-desc">Monitor your premium request usage at <a href="https://github.com/settings/copilot" target="_blank" rel="noopener">github.com/settings/copilot</a>. This dashboard shows your monthly allowance and current consumption. Premium requests are used when you select premium models or use agentic features.</p>
+          <div class="component-tags">
+            <span class="component-tag">GitHub Settings</span>
+            <span class="component-tag">Dashboard</span>
+          </div>
+        </div>
+
+        <div class="component-section">
+          <h3 class="component-section-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Organization-Level Insights
+          </h3>
+          <p class="component-section-desc">Org admins can view usage across the organization via the <a href="https://docs.github.com/en/copilot/managing-copilot/managing-github-copilot-in-your-organization/reviewing-usage-data-for-github-copilot-in-your-organization" target="_blank" rel="noopener">Copilot usage dashboard</a> and the Copilot Metrics API. Track adoption, active users, and feature-level engagement to identify where tokens are being consumed across your team.</p>
+          <div class="component-tags">
+            <span class="component-tag">Admin</span>
+            <span class="component-tag">API</span>
+          </div>
+        </div>
+
+        <div class="component-section">
+          <h3 class="component-section-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Premium vs. Standard Requests
+          </h3>
+          <p class="component-section-desc">Understand what triggers a premium request: using premium models (Claude Opus, o3-pro, Gemini 2.5 Pro), agent mode sessions, and Copilot Cloud Agent runs. Standard models like GPT-4.1 and Claude Sonnet are included in your base allowance and don't count as premium.</p>
+          <div class="component-tags">
+            <span class="component-tag">Billing</span>
+            <span class="component-tag">Models</span>
+          </div>
+        </div>
+
+        <div class="component-section">
+          <h3 class="component-section-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            Set Usage Policies
+          </h3>
+          <p class="component-section-desc">Organization admins can configure policies to control which Copilot features are available. Disable features your team doesn't need to prevent unintentional token spend. Manage editor-based and platform-based suggestions independently.</p>
+          <div class="component-tags">
+            <span class="component-tag">Governance</span>
+            <span class="component-tag">Policies</span>
+          </div>
+        </div>
+
+        <div class="component-section">
+          <h3 class="component-section-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            CLI Session Awareness
+          </h3>
+          <p class="component-section-desc">In Copilot CLI, use <code>/cost</code> to see token usage for the current session. Use <code>/compact</code> regularly to compress conversation history and free up context window space. Watch for long-running agent loops that may burn through tokens.</p>
+          <div class="component-tags">
+            <span class="component-tag">CLI</span>
+            <span class="component-tag">Real-time</span>
+          </div>
+        </div>
+
+        <div class="component-section">
+          <h3 class="component-section-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            Billing & Plan Management
+          </h3>
+          <p class="component-section-desc">Review your plan's included premium requests at <a href="https://github.com/settings/billing" target="_blank" rel="noopener">github.com/settings/billing</a>. Copilot Free includes limited premium requests, Pro includes more, and Enterprise/Business plans offer higher limits. Consider upgrading if you consistently hit limits.</p>
+          <div class="component-tags">
+            <span class="component-tag">Billing</span>
+            <span class="component-tag">Plans</span>
+          </div>
+        </div>
+
+      </div>
+      <button class="layer-focus-close" onclick="event.stopPropagation(); closeLayer(this.closest('.layer-band'))" aria-label="Close expanded view">✕</button>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Built with <span class="footer-heart">♥</span> for the GitHub Copilot community</p>
+    <p class="footer-links">
+      <a href="https://docs.github.com/en/copilot" target="_blank" rel="noopener">Copilot Docs</a>
+      <span class="footer-sep">·</span>
+      <a href="https://github.com/settings/copilot" target="_blank" rel="noopener">Your Usage</a>
+      <span class="footer-sep">·</span>
+      <a href="https://github.blog/changelog/label/copilot/" target="_blank" rel="noopener">Changelog</a>
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
