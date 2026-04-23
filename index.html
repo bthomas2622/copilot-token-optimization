@@ -44,6 +44,20 @@
     <div class="hero-content">
       <h1 class="hero-title">Ship More, <span class="hero-title-accent">Spend Less</span></h1>
       <p class="hero-subtitle">A developer's guide to maximizing token efficiency across every GitHub Copilot surface</p>
+      <nav class="hero-nav">
+        <a href="#best-practices" class="hero-nav-link" style="--nav-color: #3fb950;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Best Practices
+        </a>
+        <a href="#tools" class="hero-nav-link" style="--nav-color: #58a6ff;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          Tools
+        </a>
+        <a href="#monitor" class="hero-nav-link" style="--nav-color: #bc8cff;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+          Monitor Your Usage
+        </a>
+      </nav>
     </div>
   </header>
 
@@ -51,7 +65,7 @@
   <main class="poster">
 
     <!-- Section 1: Best Practices -->
-    <section class="layer-band" style="--layer-color: #3fb950;" onclick="toggleLayer(this)" tabindex="0" role="button" aria-expanded="false">
+    <section id="best-practices" class="layer-band" style="--layer-color: #3fb950;" onclick="toggleLayer(this)" tabindex="0" role="button" aria-expanded="false">
       <div class="layer-band-header">
         <div class="layer-num">1</div>
         <div class="layer-band-titles">
@@ -148,7 +162,7 @@
     </div>
 
     <!-- Section 2: Tools -->
-    <section class="layer-band" style="--layer-color: #58a6ff;" onclick="toggleLayer(this)" tabindex="0" role="button" aria-expanded="false">
+    <section id="tools" class="layer-band" style="--layer-color: #58a6ff;" onclick="toggleLayer(this)" tabindex="0" role="button" aria-expanded="false">
       <div class="layer-band-header">
         <div class="layer-num">2</div>
         <div class="layer-band-titles">
@@ -245,7 +259,7 @@
     </div>
 
     <!-- Section 3: Monitor Your Usage -->
-    <section class="layer-band" style="--layer-color: #bc8cff;" onclick="toggleLayer(this)" tabindex="0" role="button" aria-expanded="false">
+    <section id="monitor" class="layer-band" style="--layer-color: #bc8cff;" onclick="toggleLayer(this)" tabindex="0" role="button" aria-expanded="false">
       <div class="layer-band-header">
         <div class="layer-num">3</div>
         <div class="layer-band-titles">

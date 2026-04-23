@@ -258,6 +258,38 @@ html[data-theme="light"] .theme-icon-moon { display: none; }
   line-height: 1.5;
 }
 
+/* ---- Hero Nav ---- */
+.hero-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.hero-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--nav-color);
+  background: color-mix(in srgb, var(--nav-color) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--nav-color) 25%, transparent);
+  border-radius: 24px;
+  text-decoration: none;
+  transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.hero-nav-link:hover {
+  background: color-mix(in srgb, var(--nav-color) 15%, transparent);
+  border-color: var(--nav-color);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--nav-color) 20%, transparent);
+  text-decoration: none;
+}
+
 /* ---- Main Content / Poster ---- */
 .poster {
   display: flex;
@@ -308,6 +340,7 @@ html[data-theme="light"] .theme-icon-moon { display: none; }
 
 /* ---- Layer Bands ---- */
 .layer-band {
+  scroll-margin-top: 24px;
   background: linear-gradient(135deg,
     color-mix(in srgb, var(--layer-color) 4%, var(--color-bg-secondary)) 0%,
     var(--color-bg-secondary) 100%
