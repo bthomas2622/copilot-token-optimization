@@ -92,12 +92,12 @@
         <div class="component-section">
           <h3 class="component-section-name">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            Scope Your Context
+            Scope Your Context Surgically
           </h3>
-          <p class="component-section-desc">Only include relevant files and code snippets. More context ≠ better results — it means more input tokens. Close unrelated tabs, use <code>#file</code> references to pinpoint exactly what Copilot should look at.</p>
+          <p class="component-section-desc">Never say "read the codebase" — that loads every file Copilot can see. Most tasks touch 2–3 files. Point directly to those with <code>#file</code> references. Close unrelated tabs. If you need to read a file yourself, read it yourself — don't ask the AI to load it into context on your behalf.</p>
           <div class="component-tags">
             <span class="component-tag">Context Window</span>
-            <span class="component-tag">Efficiency</span>
+            <span class="component-tag">Precision</span>
           </div>
         </div>
 
@@ -118,7 +118,7 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
             Accept & Edit, Don't Regenerate
           </h3>
-          <p class="component-section-desc">If a suggestion is 80% right, accept it and manually edit the remainder rather than regenerating from scratch. Each regeneration consumes a full round of tokens for potentially marginal improvements.</p>
+          <p class="component-section-desc">If a suggestion is 80% right, accept it and manually edit the remainder rather than regenerating. Each regeneration re-reads the full context and produces a full new response — doubling the token cost for potentially marginal improvements. Small manual edits are free.</p>
           <div class="component-tags">
             <span class="component-tag">Workflow</span>
             <span class="component-tag">Token Savings</span>
@@ -128,12 +128,12 @@
         <div class="component-section">
           <h3 class="component-section-name">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            Start New Conversations
+            Understand Context Accumulation
           </h3>
-          <p class="component-section-desc">Long chat threads accumulate context that gets re-sent with every message. When switching topics, start a fresh conversation. This prevents bloated context windows and keeps token usage lean.</p>
+          <p class="component-section-desc">Every message re-reads the <em>entire</em> conversation from the top. Message 40 costs far more than message 5 — not because it's harder, but because it re-processes everything before it. Tool outputs, file reads, and command results all stack permanently. New topic = new conversation. No exceptions.</p>
           <div class="component-tags">
-            <span class="component-tag">Chat Management</span>
-            <span class="component-tag">Context Reset</span>
+            <span class="component-tag">Core Mechanic</span>
+            <span class="component-tag">Session Hygiene</span>
           </div>
         </div>
 
@@ -191,7 +191,7 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
             VS Code — Agent Mode
           </h3>
-          <p class="component-section-desc">Agent mode can autonomously run terminal commands, fix errors, and iterate — but each loop costs tokens. Set <code>Auto</code> approval thoughtfully. Use <code>@workspace</code> for codebase-wide questions so Copilot indexes efficiently rather than scanning everything.</p>
+          <p class="component-section-desc">Agent mode autonomously runs commands, reads files, and iterates — but every tool output stacks into context permanently. Each loop compounds the cost of every subsequent message. Set approval to <code>Auto</code> thoughtfully and watch for runaway loops. Reserve agent mode for tasks that genuinely need autonomy.</p>
           <div class="component-tags">
             <span class="component-tag">VS Code</span>
             <span class="component-tag">Agentic</span>
@@ -203,7 +203,7 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
             Copilot CLI
           </h3>
-          <p class="component-section-desc">Use sub-agents (<code>explore</code>, <code>task</code>) for parallel work — they use smaller models and less tokens. Leverage <code>grep</code>/<code>glob</code>/<code>view</code> tools directly for simple lookups instead of launching agents. Use <code>/compact</code> to summarize and reduce conversation context.</p>
+          <p class="component-section-desc">Use sub-agents (<code>explore</code>, <code>task</code>) for parallel work — they run on smaller, cheaper models with isolated context. Use <code>grep</code>/<code>glob</code>/<code>view</code> tools directly for simple lookups. Know the difference: <code>/compact</code> summarizes and compresses your history; <code>/clear</code> wipes it entirely. Wrong choice = wasted tokens either way.</p>
           <div class="component-tags">
             <span class="component-tag">Terminal</span>
             <span class="component-tag">Sub-agents</span>
@@ -227,7 +227,7 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
             Model Selection
           </h3>
-          <p class="component-section-desc">Choose the right model for the job. Use fast/cheap models (GPT-4.1, Claude Haiku) for simple tasks like code completion and quick questions. Reserve premium models (Claude Opus, o3-pro) for complex reasoning where quality matters most.</p>
+          <p class="component-section-desc">Match the model to the task. <strong>Premium models</strong> (Claude Opus, o3-pro) for architecture, complex debugging, multi-file reasoning. <strong>Standard models</strong> (GPT-4.1, Claude Sonnet) for daily implementation and tests. <strong>Fast models</strong> (Claude Haiku) for renames, formatting, quick lookups. If a task takes under 30 seconds to answer, it doesn't need a premium model.</p>
           <div class="component-tags">
             <span class="component-tag">All Surfaces</span>
             <span class="component-tag">Cost Control</span>
