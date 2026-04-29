@@ -19,55 +19,22 @@ function toggleTheme() {
   }
 })();
 
-// Layer expand/collapse
-let overlay = null;
-
+// Layer expand/collapse (inline accordion)
 function toggleLayer(band) {
-  if (band.classList.contains("layer-focused")) return;
-  openLayer(band);
-}
-
-function openLayer(band) {
-  // Create overlay
-  overlay = document.createElement("div");
-  overlay.className = "layer-focus-overlay";
-  overlay.onclick = () => closeLayer(band);
-  document.body.appendChild(overlay);
-
-  // Expand
-  band.classList.add("layer-focused");
-  band.setAttribute("aria-expanded", "true");
-  document.body.style.overflow = "hidden";
-
-  // ESC to close
-  band._escHandler = (e) => {
-    if (e.key === "Escape") closeLayer(band);
-  };
-  document.addEventListener("keydown", band._escHandler);
-}
-
-function closeLayer(band) {
-  band.classList.remove("layer-focused");
-  band.setAttribute("aria-expanded", "false");
-  document.body.style.overflow = "";
-
-  if (overlay) {
-    overlay.remove();
-    overlay = null;
-  }
-
-  if (band._escHandler) {
-    document.removeEventListener("keydown", band._escHandler);
-    delete band._escHandler;
+  const isExpanded = band.classList.contains("layer-expanded");
+  if (isExpanded) {
+    band.classList.remove("layer-expanded");
+    band.setAttribute("aria-expanded", "false");
+  } else {
+    band.classList.add("layer-expanded");
+    band.setAttribute("aria-expanded", "true");
   }
 }
 
-// Prevent card clicks from bubbling to the band when focused
+// Prevent card clicks from bubbling to the band
 document.querySelectorAll(".component-section").forEach((card) => {
   card.addEventListener("click", (e) => {
-    if (card.closest(".layer-focused")) {
-      e.stopPropagation();
-    }
+    e.stopPropagation();
   });
 });
 
