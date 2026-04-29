@@ -31,6 +31,10 @@
         <span class="hero-brand-name">Copilot Token Optimization</span>
       </div>
       <div class="hero-controls">
+        <a href="https://docs.github.com/en/copilot" target="_blank" rel="noopener" class="hero-docs-link" aria-label="Official GitHub Copilot Docs">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          Docs
+        </a>
         <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
           <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
@@ -199,6 +203,54 @@
           </div>
         </div>
 
+        <div class="component-section">
+          <h3 class="component-section-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Write Caveman Prompts
+          </h3>
+          <p class="component-section-desc">The single most effective technique. Drop linguistic scaffolding that adds tokens without information: articles (<em>a, an, the</em>), filler (<em>just, really, basically</em>), pleasantries (<em>Sure, I'd be happy to help!</em>), hedging. Pattern: <code>[thing] [action] [reason]</code>. "Refactor function. Fix auth handling. Make efficient." conveys the same intent as a 40-token polite version — at 10 tokens. Real-world savings: 30–50% on input tokens.</p>
+          <div class="component-tags">
+            <span class="component-tag">Prompt Compression</span>
+            <span class="component-tag">30–50% Input Savings</span>
+          </div>
+        </div>
+
+        <div class="component-section">
+          <h3 class="component-section-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            Constrain Output Format
+          </h3>
+          <p class="component-section-desc">Output tokens cost <strong>5× more</strong> than input tokens. One line in <code>copilot-instructions.md</code> — "Code only, no explanation" — cuts output cost 40–70% on every code task, permanently. Other high-value constraints: "Answer in one sentence", "3 bullet points max", "Yes or no, then one line why". Set terse output as a project default so you don't have to remember each time.</p>
+          <div class="component-tags">
+            <span class="component-tag">Output Control</span>
+            <span class="component-tag">5× Cost Multiplier</span>
+          </div>
+        </div>
+
+        <div class="component-section">
+          <h3 class="component-section-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+            Compress Your Instructions File
+          </h3>
+          <p class="component-section-desc">Your <code>.github/copilot-instructions.md</code> is loaded on <em>every</em> Copilot interaction. A typical 200-line file burns ~1,500 tokens per call — before you type anything. Compress it the same way you'd compress a prompt: strip filler, use fragments, keep only landmines the agent can't discover on its own. A well-compressed 6-line file at ~50 tokens saves 72,500 tokens over 50 interactions vs. a bloated one.</p>
+          <div class="component-tags">
+            <span class="component-tag">Always-On Context</span>
+            <span class="component-tag">High Leverage</span>
+          </div>
+        </div>
+
+        <div class="component-section">
+          <h3 class="component-section-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Use Declarative Guardrails
+          </h3>
+          <p class="component-section-desc">Imperative instructions ("First read the file, then identify all public functions, then for each one check...") are long and fragile. Declarative guardrails ("All exported functions: JSDoc required.") are shorter, more stable, and compose cleanly. Five declarative invariants stack; five imperative procedures interfere. Use structured formats — bullets and key-value pairs beat paragraphs every time.</p>
+          <div class="component-tags">
+            <span class="component-tag">Instruction Design</span>
+            <span class="component-tag">Composability</span>
+          </div>
+        </div>
+
       </div>
       <button class="layer-focus-close" onclick="event.stopPropagation(); closeLayer(this.closest('.layer-band'))" aria-label="Close expanded view">✕</button>
     </section>
@@ -289,7 +341,7 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
             Model Selection
           </h3>
-          <p class="component-section-desc">Match the model to the task. <strong>Premium models</strong> (Claude Opus, o3-pro) for architecture, complex debugging, multi-file reasoning. <strong>Standard models</strong> (GPT-4.1, Claude Sonnet) for daily implementation and tests. <strong>Fast models</strong> (Claude Haiku) for renames, formatting, quick lookups. If a task takes under 30 seconds to answer, it doesn't need a premium model.</p>
+          <p class="component-section-desc"><strong>Default to Auto.</strong> Auto chooses from the supported model pool and applies a discount on paid plans — it's the best baseline. Override only when needed: pin a <strong>fast model</strong> (Claude Haiku) for renames and quick lookups, a <strong>standard model</strong> (GPT-4.1, Claude Sonnet) for daily implementation, or a <strong>premium model</strong> (Claude Opus) for architecture and deep reasoning. Teams switching from "always Sonnet" to "Auto, override when needed" generally reduce spend because they stop defaulting every interaction into the higher-cost lane.</p>
           <div class="component-tags">
             <span class="component-tag">All Surfaces</span>
             <span class="component-tag">Cost Control</span>
@@ -344,6 +396,42 @@
           </div>
         </div>
 
+        <div class="component-section">
+          <h3 class="component-section-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            Choose Ask, Edit, or Agent
+          </h3>
+          <p class="component-section-desc">Agent mode costs <strong>5–25×</strong> more than Ask mode for the same prompt — it triggers 5–25 internal LLM calls with file reads, tool evaluations, and multi-step reasoning. "What does this function do?" → Ask (1 call, ~2K tokens). Single-file change → Edit (1–2 calls). Multi-file refactor with clear scope → Agent. <em>Never</em> use Agent for a vague prompt — clarify scope in Ask first, then switch.</p>
+          <div class="component-tags">
+            <span class="component-tag">Mode Selection</span>
+            <span class="component-tag">60–90% Savings</span>
+          </div>
+        </div>
+
+        <div class="component-section">
+          <h3 class="component-section-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+            Scope Instructions with applyTo
+          </h3>
+          <p class="component-section-desc">Split one big <code>copilot-instructions.md</code> into a small always-on core plus scoped instruction files in <code>.github/instructions/</code>. Each file takes an <code>applyTo</code> frontmatter glob — Copilot only loads it when editing matching files. Your React questions stop paying for your database migration guidelines. Most teams have everything always-on; flipping the ratio cuts per-interaction context 50–80%.</p>
+          <div class="component-tags">
+            <span class="component-tag">Configuration</span>
+            <span class="component-tag">Conditional Context</span>
+          </div>
+        </div>
+
+        <div class="component-section">
+          <h3 class="component-section-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            Audit Your MCP Servers
+          </h3>
+          <p class="component-section-desc">Each MCP tool definition costs 100–500 tokens — loaded <em>every agent step</em>. 10 servers × 5 tools × 200 tokens × 15 steps = <strong>150K tokens</strong> just telling the agent what tools exist. Audit your enabled servers: if you don't need it for the current task, disable it. Use workspace-level <code>.vscode/mcp.json</code> for project-specific servers instead of enabling everything globally. VS Code's built-in tools already cover file read/write, terminal, and search.</p>
+          <div class="component-tags">
+            <span class="component-tag">MCP</span>
+            <span class="component-tag">Hidden Token Tax</span>
+          </div>
+        </div>
+
       </div>
       <button class="layer-focus-close" onclick="event.stopPropagation(); closeLayer(this.closest('.layer-band'))" aria-label="Close expanded view">✕</button>
     </section>
@@ -372,9 +460,9 @@
         <div class="component-section">
           <h3 class="component-section-name">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
-            Premium Request Tracking
+            AI Credit Tracking
           </h3>
-          <p class="component-section-desc">Monitor your premium request usage at <a href="https://github.com/settings/copilot" target="_blank" rel="noopener">github.com/settings/copilot</a>. This dashboard shows your monthly allowance and current consumption. Premium requests are used when you select premium models or use agentic features.</p>
+          <p class="component-section-desc">Monitor your AI Credit usage at <a href="https://github.com/settings/copilot" target="_blank" rel="noopener">github.com/settings/copilot</a>. As of June 2026, Copilot uses <strong>usage-based billing</strong> — every interaction consumes AI Credits based on token usage (input, output, and cached tokens) at <a href="https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing" target="_blank" rel="noopener">published per-model rates</a>. Each plan includes a monthly credit allowance (1 AI Credit = $0.01 USD). Code completions and Next Edit suggestions remain unlimited.</p>
           <div class="component-tags">
             <span class="component-tag">GitHub Settings</span>
             <span class="component-tag">Dashboard</span>
@@ -384,24 +472,24 @@
         <div class="component-section">
           <h3 class="component-section-name">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-            Know Your Multipliers
+            Know Your Per-Token Costs
           </h3>
-          <p class="component-section-desc">Different features consume premium requests at different rates. Agent mode and Copilot Cloud Agent sessions use more premium requests per interaction than chat or completions. Factor this into your workflow — use agentic features for high-value tasks, not quick questions.</p>
+          <p class="component-section-desc">Different models have vastly different per-token rates. Output tokens cost 3–5× more than input tokens. Agent mode and Cloud Agent sessions consume far more tokens per task than chat or completions because they run multiple internal LLM calls. Factor this into your workflow — expensive models on high-value tasks, cheap models on quick questions.</p>
           <div class="component-tags">
             <span class="component-tag">Awareness</span>
-            <span class="component-tag">Efficiency</span>
+            <span class="component-tag">AI Credits</span>
           </div>
         </div>
 
         <div class="component-section">
           <h3 class="component-section-name">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            Premium vs. Standard Requests
+            Model Pricing Tiers
           </h3>
-          <p class="component-section-desc">Understand what triggers a premium request: using premium models (Claude Opus, o3-pro, Gemini 2.5 Pro), agent mode sessions, and Copilot Cloud Agent runs. Standard models like GPT-4.1 and Claude Sonnet are included in your base allowance and don't count as premium.</p>
+          <p class="component-section-desc">Every model has a different cost per million tokens. <strong>Lightweight</strong> models (GPT-5 mini, Gemini 3 Flash) are cheapest. <strong>Versatile</strong> models (GPT-4.1, Claude Sonnet, Haiku) are mid-range. <strong>Powerful</strong> models (Claude Opus, GPT-5.5, Gemini 2.5 Pro) cost the most. All usage draws from the same AI Credit pool — choosing the right tier for the task is the primary cost lever.</p>
           <div class="component-tags">
             <span class="component-tag">Billing</span>
-            <span class="component-tag">Models</span>
+            <span class="component-tag">Model Tiers</span>
           </div>
         </div>
 
@@ -410,7 +498,7 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
             Build Personal Habits
           </h3>
-          <p class="component-section-desc">Periodically check your usage and reflect on which workflows consumed the most. Did you burn requests on long chat threads? Could you have used inline completions instead? Small habit changes — like starting fresh conversations and choosing the right model — compound into big savings.</p>
+          <p class="component-section-desc">Periodically check your AI Credit consumption and reflect on which workflows cost the most. Did you burn credits on long chat threads with expensive models? Could you have used inline completions instead? Small habit changes — like starting fresh conversations and choosing the right model tier — compound into big savings.</p>
           <div class="component-tags">
             <span class="component-tag">Habits</span>
             <span class="component-tag">Self-Audit</span>
@@ -434,7 +522,7 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
             Billing & Plan Management
           </h3>
-          <p class="component-section-desc">Review your plan's included premium requests at <a href="https://github.com/settings/billing" target="_blank" rel="noopener">github.com/settings/billing</a>. Copilot Free includes limited premium requests, Pro includes more, and Enterprise/Business plans offer higher limits. Consider upgrading if you consistently hit limits.</p>
+          <p class="component-section-desc">Review your plan's included AI Credits at <a href="https://github.com/settings/billing" target="_blank" rel="noopener">github.com/settings/billing</a>. Each plan includes monthly credits matching its price ($10 for Pro, $39 for Pro+, $19/user for Business, $39/user for Enterprise). Business and Enterprise plans pool unused credits across the org. Admins can set budgets at enterprise, cost center, and user levels.</p>
           <div class="component-tags">
             <span class="component-tag">Billing</span>
             <span class="component-tag">Plans</span>
@@ -446,7 +534,7 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             Set a Baseline First
           </h3>
-          <p class="component-section-desc">Before optimizing, measure. Pick a representative task, note your premium requests consumed, then apply optimizations and run the same task again. Without a baseline, you're guessing. The comparison is your signal — not generic percentage claims.</p>
+          <p class="component-section-desc">Before optimizing, measure. Pick a representative task, note your AI Credits consumed, then apply optimizations and run the same task again. Without a baseline, you're guessing. The comparison is your signal — not generic percentage claims.</p>
           <div class="component-tags">
             <span class="component-tag">Measurement</span>
             <span class="component-tag">Before &amp; After</span>
@@ -474,6 +562,30 @@
           <div class="component-tags">
             <span class="component-tag">Agentic</span>
             <span class="component-tag">Intervention</span>
+          </div>
+        </div>
+
+        <div class="component-section">
+          <h3 class="component-section-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+            Prune Context Files Ruthlessly
+          </h3>
+          <p class="component-section-desc">Research shows LLM-generated context files (from <code>/init</code> or similar) <strong>hurt agent performance</strong> while increasing cost 20–23%. Agents discover project structure on their own — they already know how to <code>ls</code> and <code>grep</code>. Delete anything discoverable ("This is a Python project", "Tests are in tests/"). Keep only <em>landmines</em>: things that look normal but cause mistakes ("Use uv not pip", "Don't refactor the auth module"). Treat your context file like a bug tracker — it should grow and shrink, not just accumulate.</p>
+          <div class="component-tags">
+            <span class="component-tag">Context Files</span>
+            <span class="component-tag">Research-Backed</span>
+          </div>
+        </div>
+
+        <div class="component-section">
+          <h3 class="component-section-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--layer-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+            Keep Commits &amp; Reviews Terse
+          </h3>
+          <p class="component-section-desc">The Coding Agent reads git history and PR comments for context — every verbose commit or review comment costs tokens when ingested. Use Conventional Commits, subject ≤50 chars. For reviews, use one-line format with severity prefixes: "L42: 🔴 bug: user can be null. Add null guard before .email access." (~12 tokens vs ~40 for a paragraph). Savings seem small per-commit but compound across a repo's history.</p>
+          <div class="component-tags">
+            <span class="component-tag">Git Hygiene</span>
+            <span class="component-tag">Compound Savings</span>
           </div>
         </div>
 
